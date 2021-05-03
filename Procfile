@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependency/* -Dserver.port=$PORT br/com/desafio/apipessoas/ApiPessoasApplication
+web: java -jar target/app.jar

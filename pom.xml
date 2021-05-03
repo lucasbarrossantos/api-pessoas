@@ -11,7 +11,7 @@
     <groupId>br.com.desafio</groupId>
     <artifactId>api-pessoas</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>api-pessoas</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -110,6 +110,7 @@
     </dependencies>
 
     <build>
+        <finalName>app</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
