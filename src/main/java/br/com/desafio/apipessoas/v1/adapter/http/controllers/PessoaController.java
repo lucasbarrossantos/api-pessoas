@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -28,6 +29,11 @@ public class PessoaController {
     @GetMapping
     public ResponseEntity<List<UserModel>> getAllUsers() {
         return ResponseEntity.ok(pessoaService.getAllUsers());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UserModel> getById(@PathVariable UUID id) {
+        return ResponseEntity.ok(pessoaService.getById(id));
     }
 
 }

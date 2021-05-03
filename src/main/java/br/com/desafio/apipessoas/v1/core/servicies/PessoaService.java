@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Slf4j
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -52,5 +53,11 @@ public class PessoaService implements UserDetailsService {
             return user.get();
         } else
             throw new PessoaNaoEncontradaException("User not found!");
+    }
+
+    public UserModel getById(UUID id) {
+        return userEntityRepository.findById(id)
+                .map(mapper::toModel)
+                .orElseThrow(() -> new PessoaNaoEncontradaException("Nenhum registro encontrado com o parâmetro informado!"));
     }
 }
